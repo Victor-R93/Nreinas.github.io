@@ -2,8 +2,8 @@ document.getElementById('queenForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const numQueens = parseInt(document.getElementById('numQueens').value);
-    if (numQueens > 16 || numQueens < 1) {
-        alert('Por favor, elige un número entre 1 y 16.');
+    if (numQueens > 12 || numQueens < 1) {
+        alert('Por favor, elige un número entre 1 y 12.');
         return;
     }
 
