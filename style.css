@@ -9,18 +9,21 @@ body {
     background: linear-gradient(to bottom, #d4edda, #a8dfb1);
     color: #155724;
 }
+
 header {
     text-align: center;
     margin-top: 20px;
     padding: 20px;
 }
+
 header img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
-    border: 5px solid #a8dfb1;
+    border: 5px solid #61ba6d; /* Borde con el nuevo color */
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -32,43 +35,77 @@ header img {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #61ba6d; /* Borde de contenedor */
 }
+
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%;
 }
+
 label {
     font-size: 1.2rem;
     font-weight: bold;
+    color: #61ba6d; /* Color de texto con el nuevo color */
 }
-input, button {
+
+input,
+button {
     padding: 10px;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     outline: none;
+    width: 100%;
 }
+
 input {
-    width: 60%;
-    border: 2px solid #a8dfb1;
+    border: 2px solid #61ba6d; /* Borde de entrada */
 }
+
 button {
     background-color: #28a745;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    border: 2px solid #61ba6d; /* Borde de botón */
 }
+
 button:hover {
     background-color: #218838;
     transform: scale(1.05);
 }
+
+#boardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #ffffffc0;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #61ba6d; /* Borde de contenedor del tablero */
+}
+
 #board {
     display: grid;
     gap: 2px;
-    margin-top: 20px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    max-width: 60vw; /* Ajusta el tamaño máximo del tablero */
+    width: auto;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid #61ba6d; /* Borde del tablero */
+    border-radius: 10px; /* Esquinas redondeadas */
+    background-color: #f8f9fa; /* Fondo claro */
 }
+
 .cell {
     width: 40px;
     height: 40px;
@@ -78,19 +115,39 @@ button:hover {
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 3px;
+    position: relative;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2); /* Sombra interna */
 }
+
 .cell.white {
     background-color: #f8f9fa;
 }
+
 .cell.black {
     background-color: #6c757d;
     color: white;
 }
+
+.cell.queen {
+    color: #61ba6d; /* Color de las reinas */
+    font-size: 2rem; /* Tamaño de la reina */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para las reinas */
+    transform: rotate(0deg); /* Asegura que la reina se vea recta */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cell.queen:hover {
+    transform: scale(1.1) rotate(5deg); /* Efecto de hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra al pasar el mouse */
+}
+
 footer {
     margin-top: 20px;
     text-align: center;
     font-size: 0.9rem;
+    color: #61ba6d; /* Color de texto en el pie de página */
 }
+
 .description {
     text-align: left;
     font-size: 1rem;
@@ -99,9 +156,11 @@ footer {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #61ba6d; /* Borde de la descripción */
 }
+
 h1, h2, h3 {
-    color: #155724;
+    color: #155724; /* Color de los encabezados */
 }
 
 /* Responsive Styles */
@@ -109,13 +168,19 @@ h1, h2, h3 {
     body {
         font-size: 14px;
     }
+
     input {
         width: 80%;
     }
+
     .cell {
         width: 30px;
         height: 30px;
         font-size: 1.2rem;
+    }
+
+    #board {
+        max-width: 50vw;
     }
 }
 
@@ -123,14 +188,36 @@ h1, h2, h3 {
     body {
         font-size: 12px;
     }
+
     .container {
         width: 95%;
     }
+
     header img {
         max-height: 150px;
     }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
     .cell {
         width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+
+    #board {
+        gap: 1px;
+        max-width: 70vw;
+    }
+}
+
         height: 25px;
         font-size: 1rem;
     }
