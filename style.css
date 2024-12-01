@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #d4edda, #a8dfb1);
+    color: #155724;
+}
+header {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 5px solid #a8dfb1;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+input, button {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+input {
+    width: 60%;
+    border: 2px solid #a8dfb1;
+}
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+#board {
+    display: grid;
+    gap: 2px;
+    margin-top: 20px;
+}
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.cell.white {
+    background-color: #f8f9fa;
+}
+.cell.black {
+    background-color: #6c757d;
+    color: white;
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.description {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    color: #155724;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    input {
+        width: 80%;
+    }
+    .cell {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    .container {
+        width: 95%;
+    }
+    header img {
+        max-height: 150px;
+    }
+    .cell {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+}
