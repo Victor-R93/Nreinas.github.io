@@ -21,7 +21,7 @@ header img {
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
-    border: 5px solid #61ba6d; /* Borde de la imagen */
+    border: 5px solid #61ba6d;
 }
 
 .container {
@@ -46,7 +46,7 @@ header img {
     background-color: #ffffffc0;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #61ba6d; /* Borde del contenedor del tablero */
+    border: 2px solid #61ba6d;
     overflow: hidden;
 }
 
@@ -54,25 +54,22 @@ header img {
     display: grid;
     gap: 2px;
     margin: 0 auto;
+    width: 100%;
+    max-width: 600px; /* Ajuste para evitar desbordamiento */
     aspect-ratio: 1;
-    max-width: 80vw;
-    width: auto;
-    justify-content: center;
-    padding: 5px;
     border: 2px solid #61ba6d;
     border-radius: 10px;
-    background-color: #f8f9fa; /* Fondo claro */
+    background-color: #f8f9fa;
 }
 
 .cell {
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
 .cell.white {
@@ -85,36 +82,18 @@ header img {
 }
 
 .cell.queen {
-    color: #d9534f; /* Color de las reinas */
+    color: #d9534f; /* Rojo para las reinas */
     font-size: 1.8rem;
+    background-color: #ffd700; /* Amarillo de fondo para resaltar */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para el número de soluciones */
 #solutionCount {
     margin-top: 15px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #155724;
-}
-
-footer {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #155724;
-}
-
-.description {
-    text-align: left;
-    font-size: 1rem;
-    line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #155724;
-}
-
-h1, h2, h3 {
     color: #155724;
 }
 
@@ -125,13 +104,19 @@ h1, h2, h3 {
     }
 
     #board {
-        max-width: 90vw;
+        max-width: 90vw; /* Asegura que el tablero no desborde */
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
     }
 
     .cell {
-        width: 30px;
-        height: 30px;
-        font-size: 1.2rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .cell.queen {
+        font-size: 1.5rem;
     }
 }
 
@@ -148,15 +133,50 @@ h1, h2, h3 {
         max-height: 150px;
     }
 
+    #board {
+        max-width: 100vw; /* Ajusta el ancho del tablero en dispositivos muy pequeños */
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
+    }
+
     .cell {
         width: 25px;
         height: 25px;
         font-size: 1rem;
     }
 
-    #board {
-        max-width: 100vw;
+    .cell.queen {
+        font-size: 1.2rem;
     }
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #155724;
+    background-color: #61ba6d; /* Fondo verde */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Limita el ancho en pantallas grandes */
+}
+
+footer p {
+    margin: 0;
+    color: white; /* Color de texto blanco para mejor contraste */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 
     #boardContainer {
         padding: 5px;
