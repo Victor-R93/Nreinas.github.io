@@ -21,7 +21,7 @@ header img {
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
-    border: 5px solid #61ba6d; /* Borde con el nuevo color */
+    border: 5px solid #61ba6d; /* Borde de la imagen */
 }
 
 .container {
@@ -35,48 +35,6 @@ header img {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 2px solid #61ba6d; /* Borde de contenedor */
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    width: 100%;
-}
-
-label {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #61ba6d; /* Color de texto con el nuevo color */
-}
-
-input,
-button {
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    width: 100%;
-}
-
-input {
-    border: 2px solid #61ba6d; /* Borde de entrada */
-}
-
-button {
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    border: 2px solid #61ba6d; /* Borde de botón */
-}
-
-button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
 }
 
 #boardContainer {
@@ -84,12 +42,12 @@ button:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    overflow: hidden;
     padding: 10px;
     background-color: #ffffffc0;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #61ba6d; /* Borde de contenedor del tablero */
+    border: 2px solid #61ba6d; /* Borde del contenedor del tablero */
+    overflow: hidden;
 }
 
 #board {
@@ -97,12 +55,12 @@ button:hover {
     gap: 2px;
     margin: 0 auto;
     aspect-ratio: 1;
-    max-width: 60vw; /* Ajusta el tamaño máximo del tablero */
+    max-width: 80vw;
     width: auto;
     justify-content: center;
     padding: 5px;
-    border: 2px solid #61ba6d; /* Borde del tablero */
-    border-radius: 10px; /* Esquinas redondeadas */
+    border: 2px solid #61ba6d;
+    border-radius: 10px;
     background-color: #f8f9fa; /* Fondo claro */
 }
 
@@ -115,8 +73,6 @@ button:hover {
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 3px;
-    position: relative;
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2); /* Sombra interna */
 }
 
 .cell.white {
@@ -129,23 +85,22 @@ button:hover {
 }
 
 .cell.queen {
-    color: #61ba6d; /* Color de las reinas */
-    font-size: 2rem; /* Tamaño de la reina */
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para las reinas */
-    transform: rotate(0deg); /* Asegura que la reina se vea recta */
-    transition: transform 0.2s, box-shadow 0.2s;
+    color: #d9534f; /* Color de las reinas */
+    font-size: 1.8rem;
 }
 
-.cell.queen:hover {
-    transform: scale(1.1) rotate(5deg); /* Efecto de hover */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra al pasar el mouse */
+#solutionCount {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #155724;
 }
 
 footer {
     margin-top: 20px;
     text-align: center;
     font-size: 0.9rem;
-    color: #61ba6d; /* Color de texto en el pie de página */
+    color: #155724;
 }
 
 .description {
@@ -156,11 +111,11 @@ footer {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #61ba6d; /* Borde de la descripción */
+    color: #155724;
 }
 
 h1, h2, h3 {
-    color: #155724; /* Color de los encabezados */
+    color: #155724;
 }
 
 /* Responsive Styles */
@@ -169,18 +124,14 @@ h1, h2, h3 {
         font-size: 14px;
     }
 
-    input {
-        width: 80%;
+    #board {
+        max-width: 90vw;
     }
 
     .cell {
         width: 30px;
         height: 30px;
         font-size: 1.2rem;
-    }
-
-    #board {
-        max-width: 50vw;
     }
 }
 
@@ -197,15 +148,6 @@ h1, h2, h3 {
         max-height: 150px;
     }
 
-    input {
-        font-size: 0.9rem;
-    }
-
-    button {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
     .cell {
         width: 25px;
         height: 25px;
@@ -213,12 +155,10 @@ h1, h2, h3 {
     }
 
     #board {
-        gap: 1px;
-        max-width: 70vw;
+        max-width: 100vw;
     }
-}
 
-        height: 25px;
-        font-size: 1rem;
+    #boardContainer {
+        padding: 5px;
     }
 }
