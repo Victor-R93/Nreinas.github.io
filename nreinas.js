@@ -46,7 +46,13 @@ document.getElementById('queenForm').addEventListener('submit', function(e) {
             for (let i = 0; i < numQueens; i++) {
                 const cell = document.createElement('div');
                 cell.className = `cell ${(row + i) % 2 === 0 ? 'white' : 'black'}`;
-                if (i === col) cell.textContent = '♛';
+
+                if (i === col) {
+                    const queen = document.createElement('div');
+                    queen.textContent = '♛';
+                    cell.appendChild(queen);
+                }
+
                 boardDiv.appendChild(cell);
             }
         });
@@ -56,3 +62,4 @@ document.getElementById('queenForm').addEventListener('submit', function(e) {
         document.getElementById('solutionCount').textContent = 'No hay soluciones disponibles.';
     }
 });
+
